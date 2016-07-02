@@ -53,7 +53,7 @@ object Lists {
         else maxItr(xs.tail, max)
       }
 
-      if (xs.isEmpty) throw new NoSuchFieldException()
+      if (xs.isEmpty) throw new NoSuchElementException()
       else maxItr(xs.tail, xs.head)
     }
   }
