@@ -23,12 +23,11 @@ object rational {
     override def toString = numer + "/" + denom;
   }
 
-  val r1 = new Rational(4, 8)                     //> r1  : week2.rational.Rational = 1/2
-  val r2 = new Rational(2, 3)                     //> r2  : week2.rational.Rational = 2/3
-  val r3 = r1 + r2                             //> r3  : week2.rational.Rational = 7/6
-  val r4 = r1.sub(r2)                             //> r4  : week2.rational.Rational = 1/-6
-  val r5 = new Rational(4)                        //> r5  : week2.rational.Rational = 4/1
-  r2 < r1                                     //> res0: Boolean = false
-  r2 max r1                                      //> res1: week2.rational.Rational = 2/3
-
+  val r1 = new Rational(4, 8)
+  val r2 = new Rational(2, 3)
+  val r3 = r1 + r2
+  val r4 = r1.sub(r2)
+  val r5 = new Rational(4)
+  r2 < r1
+  r2 max r1
 }

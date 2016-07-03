@@ -1,5 +1,5 @@
 object curry {
-
+  // GENERIC OPERATION  /////////////////////////////////
   def mapReduce(f : Int => Int, combine : (Int, Int) => Int, id : Int)(a : Int, b : Int) = {
     def loop(a: Int, acc: Int) : Int = {
       if (a > b) acc
@@ -9,6 +9,7 @@ object curry {
     loop(a, id)
   }
 
+  // SUM  ///////////////////////////////////////////////
   def sum(f: Int => Int, a: Int, b: Int): Int = {
     def loop(a: Int, acc: Int): Int = {
       if (a > b) acc
@@ -23,6 +24,7 @@ object curry {
   sum(x => x, 3, 5)
   sumWithMapReduce(x => x)(3, 5)
 
+  // PRODUCT ///////////////////////////////////////////
   def product(f : Int => Int)(a : Int, b : Int): Int = {
     def loop(a: Int, acc: Int): Int = {
       if (a > b) acc
@@ -37,6 +39,7 @@ object curry {
   product(x => x)(1,5)
   productWithMapReduce(x => x)(1,5)
 
+  // TEST CUMULATOR
   def cumulator(g : (Int, Int) => Int)(f : Int => Int)(a : Int, b : Int): Int = {
     def loop(a: Int, acc: Int): Int = {
       if (a > b) acc
@@ -46,10 +49,7 @@ object curry {
   }
 
   def sumCumulator(f : Int => Int)(a : Int, b : Int) = cumulator((x, y) => x + y)(f : Int => Int)(a : Int, b : Int)
-
   def productCumulator(f : Int => Int)(a : Int, b : Int) = cumulator((x, y) => x * y)(f : Int => Int)(a : Int, b : Int)
-
   def fact(a : Int) = productCumulator(x => x)(1, a)
-
   fact(5)
 }
