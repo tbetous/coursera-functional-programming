@@ -4,7 +4,7 @@ object factoriel {
       if(x == 0) acc else factorielItr(x - 1, acc * x)
 
     factorielItr(x, 1)
-  }                                         //> factoriel: (x: Int)Int
+  }
 
-  factoriel(3)                              //> res0: Int = 6
+  factoriel(3)
 }

@@ -1,5 +1,5 @@
 object squareRootByNewton {
-  def abs(x : Double) = if (x < 0) -x else x      //> abs: (x: Double)Double
+  def abs(x : Double) = if (x < 0) -x else x
 
   def sqrt(x: Double) = {
     def sqrItr(guess : Double) : Double =
@@ -13,10 +13,10 @@ object squareRootByNewton {
       (guess + x / guess) / 2
 
     sqrItr(1.0)
-  }                                              //> sqrt: (x: Double)Double
+  }
 
-  sqrt(2)                                   //> res0: Double = 1.4142156862745097
-  sqrt(4)                                   //> res1: Double = 2.000609756097561
-  sqrt(1e-6)                                //> res2: Double = 0.0010000001533016628
-  sqrt(1e60)                                //> res3: Double = 1.0000788456669446E30
+  sqrt(2)
+  sqrt(4)
+  sqrt(1e-6)
+  sqrt(1e60)
 }
