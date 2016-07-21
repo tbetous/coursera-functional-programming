@@ -15,3 +15,7 @@ target/
 # Scala
 *.class
 *.log
+
+# Coursera
+**/week-0
+**/coursera-scala-assignment
